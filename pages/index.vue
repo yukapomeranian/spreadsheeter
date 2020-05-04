@@ -27,11 +27,9 @@ export default Vue.extend({
   components: {
     // Logo
   },
-  async fetch() {
+  fetch() {
     // fetchはサーバサイドでのみ動いてる
-    // asyncだと、明示的に返り値を指定しなくてもPromiseがreturnされる。
     console.log("fetch()");
-    await tsubuyakiesStore.fetchMany();
   },
   computed: {
     tsubuyakiItems(): Tsubuyaki[] {
@@ -39,9 +37,11 @@ export default Vue.extend({
       return tsubuyakiesStore.allTsubuyakies;
     }
   },
-  mounted() {
+  async mounted() {
     // mountedはクライアントサイドでのみ動いてる
+    // asyncだと、明示的に返り値を指定しなくてもPromiseがreturnされる。
     console.log("mounted()");
+    await tsubuyakiesStore.fetchMany();
   }
 });
 </script>
