@@ -1,72 +1,47 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        spreadsheeter
-      </h1>
-      <h2 class="subtitle">
-        My exceptional Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+  <b-container>
+    <h1 class="py-3">
+      Tsubuyaki
+    </h1>
+    <div v-for="item in tsubuyakiItems" :key="item.id">
+      <b-card>
+        <b-card-sub-title>
+          {{ item.createdAt }}
+        </b-card-sub-title>
+        <br>
+        <b-card-text>
+          {{ item.content }}
+        </b-card-text>
+      </b-card>
     </div>
-  </div>
+  </b-container>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import Logo from "~/components/Logo.vue";
+import { Tsubuyaki } from "../types/models/tsubuyaki";
+// import Logo from "~/components/Logo.vue";
+import { tsubuyakiesStore } from "~/store/tsubuyaki/tsubuyaki-accessor";
+
 export default Vue.extend({
   components: {
-    Logo
+    // Logo
+  },
+  async fetch() {
+    // fetchはサーバサイドでのみ動いてる
+    // asyncだと、明示的に返り値を指定しなくてもPromiseがreturnされる。
+    console.log("fetch()");
+    await tsubuyakiesStore.fetchMany();
+  },
+  computed: {
+    tsubuyakiItems(): Tsubuyaki[] {
+      console.log("computed()");
+      return tsubuyakiesStore.allTsubuyakies;
+    }
+  },
+  mounted() {
+    // mountedはクライアントサイドでのみ動いてる
+    console.log("mounted()");
   }
 });
 </script>
-
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
