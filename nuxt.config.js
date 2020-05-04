@@ -49,5 +49,11 @@ export default {
     */
     extend (config, ctx) {
     }
+  },
+  typescript: {
+    typeCheck: {
+      eslint: true
+    },
+    ignoreNotFoundWarnings: true
   }
 }
