@@ -51,9 +51,9 @@ export default {
     }
   },
   typescript: {
-    typeCheck: {
-      eslint: true
-    },
+    // typeCheck: {
+    //  eslint: true
+    // },
     ignoreNotFoundWarnings: true
   }
 }
