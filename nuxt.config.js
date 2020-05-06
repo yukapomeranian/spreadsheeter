@@ -35,7 +35,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: "@/plugins/axios-accessor" }
+    { src: "@/plugins/axios-accessor" },
+    "@/plugins/bootstrap-vue"
   ],
   /*
   ** Nuxt.js dev-modules
