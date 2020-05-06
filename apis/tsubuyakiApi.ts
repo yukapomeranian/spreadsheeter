@@ -4,7 +4,7 @@ export const tsubuyakiApi = {
   list: getTsubuyakies
 };
 
-const LIST_URL = "https://script.google.com/macros/s/AKfycbwHfBLyjO4SzqkF5l5V2MYTe8rDGyGSLXpUfvNDl47tVe9OTWE/exec?&sheetname=tsubuyaki";
+const LIST_URL = "https://script.google.com/macros/s/AKfycbwHfBLyjO4SzqkF5l5V2MYTe8rDGyGSLXpUfvNDl47tVe9OTWE/exec?&sheetName=tsubuyaki";
 
 async function getTsubuyakies(): Promise<Tsubuyaki[]> {
   let tsubuyakiesResponse: TsubuyakiResponse[] = [];

@@ -5,8 +5,8 @@ import TsubuyakiStore from "~/store/tsubuyaki/tsubuyaki";
 // eslint-disable-next-line import/no-mutable-exports
 let tsubuyakiesStore: TsubuyakiStore;
 
-function initialiseStores(store: Store<any>): void {
+function initialiseTsubuyakiStores(store: Store<any>): void {
   tsubuyakiesStore = getModule(TsubuyakiStore, store);
 }
 
-export { initialiseStores, tsubuyakiesStore };
+export { initialiseTsubuyakiStores, tsubuyakiesStore };
