@@ -18,14 +18,18 @@
       <!-- ここにTwitterとかのアイコンのリンクをはりたい -->
       <nav>
         <b-nav vertical>
-          <b-nav-item active href="/">
-            Tsubuyaki
+          <b-nav-item active>
+            <b-link to="/">
+              Tsubuyaki
+            </b-link>
           </b-nav-item>
-          <b-nav-item disabled href="/dev_diary">
+          <b-nav-item disabled>
             Dev. Diary
           </b-nav-item>
-          <b-nav-item href="/memo">
-            Memo
+          <b-nav-item>
+            <b-link to="/memo">
+              Memo
+            </b-link>
           </b-nav-item>
         </b-nav>
       </nav>
