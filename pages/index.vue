@@ -42,15 +42,19 @@ export default Vue.extend({
     // fetchはサーバサイドでのみ動いてる
     console.log("fetch()");
   },
-  async asyncData() {
+  asyncData() {
     console.log("asyncData()");
-    await tsubuyakiesStore.fetchMany();
   },
   computed: {
     tsubuyakiItems(): Tsubuyaki[] {
       console.log("computed()");
       return tsubuyakiesStore.allTsubuyakies;
     }
+  },
+  async beforeCreate() {
+    // beforeCreateはサーバサイド、クライアントサイドの両方で動く
+    console.log("beforeCreate()");
+    await tsubuyakiesStore.fetchMany();
   },
   mounted() {
     // mountedはクライアントサイドでのみ動いてる
