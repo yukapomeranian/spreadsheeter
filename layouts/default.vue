@@ -1,7 +1,18 @@
 <template>
   <div>
-    <div v-b-toggle.sidebar-1 class="m-2">
-      <b-icon icon="justify" font-scale="2" />
+    <div class="m-3">
+      <b-icon v-b-toggle.sidebar-1 icon="justify" font-scale="2" />
+    </div>
+    <div class="float-right m-3">
+      <b-button
+        variant="outline-primary"
+        size="sm"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://github.com/yukapomeranian/spreadsheeter/issues"
+      >
+        Issues Prease!
+      </b-button>
     </div>
     <b-sidebar id="sidebar-1" title="Menu" width="250px" shadow>
       <!-- ここにTwitterとかのアイコンのリンクをはりたい -->

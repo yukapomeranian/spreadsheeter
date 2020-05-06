@@ -1,19 +1,8 @@
 <template>
   <b-container>
-    <h1 class="pt-3">
+    <h1>
       Tsubuyaki
     </h1>
-    <div class="text-right">
-      <b-button
-        variant="outline-primary"
-        size="sm"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://github.com/yukapomeranian/spreadsheeter/issues"
-      >
-        Issues Prease!
-      </b-button>
-    </div>
     <div v-for="item in tsubuyakiItems" :key="item.id" class="pt-3">
       <b-card>
         <b-card-sub-title>
