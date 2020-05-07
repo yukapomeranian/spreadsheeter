@@ -4,12 +4,16 @@ export const tsubuyakiApi = {
   list: getTsubuyakies
 };
 
-const LIST_URL = "https://script.google.com/macros/s/AKfycbwHfBLyjO4SzqkF5l5V2MYTe8rDGyGSLXpUfvNDl47tVe9OTWE/exec?&sheetName=tsubuyaki";
+const LIST_URL = "https://script.google.com/macros/s/AKfycbwHfBLyjO4SzqkF5l5V2MYTe8rDGyGSLXpUfvNDl47tVe9OTWE/exec";
 
 async function getTsubuyakies(): Promise<Tsubuyaki[]> {
   let tsubuyakiesResponse: TsubuyakiResponse[] = [];
   try {
-    tsubuyakiesResponse = await $axios.$get<TsubuyakiResponse[]>(LIST_URL);
+    tsubuyakiesResponse = await $axios.$get<TsubuyakiResponse[]>(LIST_URL, {
+      params: {
+        sheetName: "tsubuyaki"
+      }
+    });
   } catch (e) {
     console.error(e);
   }

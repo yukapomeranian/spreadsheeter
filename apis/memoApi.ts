@@ -4,12 +4,16 @@ export const memoApi = {
   list: getMemos
 };
 
-const LIST_URL = "https://script.google.com/macros/s/AKfycbwHfBLyjO4SzqkF5l5V2MYTe8rDGyGSLXpUfvNDl47tVe9OTWE/exec?&sheetName=memo";
+const LIST_URL = "https://script.google.com/macros/s/AKfycbwHfBLyjO4SzqkF5l5V2MYTe8rDGyGSLXpUfvNDl47tVe9OTWE/exec";
 
 async function getMemos(): Promise<Memo[]> {
   let memosResponse: MemoResponse[] = [];
   try {
-    memosResponse = await $axios.$get<MemoResponse[]>(LIST_URL);
+    memosResponse = await $axios.$get<MemoResponse[]>(LIST_URL, {
+      params: {
+        sheetName: "memo"
+      }
+    });
   } catch (e) {
     console.error(e);
   }
