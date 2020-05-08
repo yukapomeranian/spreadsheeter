@@ -6,7 +6,7 @@
     <div v-for="item in tsubuyakiItems" :key="item.id" class="pt-3">
       <b-card>
         <b-card-sub-title>
-          {{ item.createdAt }}
+          {{ item.createdAt | moment("YYYY/MM/DD ddd. hh:mm") }}
         </b-card-sub-title>
         <br>
         <b-card-text>
