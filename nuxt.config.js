@@ -36,7 +36,8 @@ export default {
   */
   plugins: [
     { src: "@/plugins/axios-accessor" },
-    "@/plugins/bootstrap-vue"
+    "@/plugins/bootstrap-vue",
+    "@/plugins/vue-moment"
   ],
   /*
   ** Nuxt.js dev-modules
