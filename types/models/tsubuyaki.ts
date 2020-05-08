@@ -1,7 +1,7 @@
 export interface Tsubuyaki {
   id: number;
   content: string;
-  createdAt: string;
+  createdAt: number;
   deletedAt: string;
 }
 export interface TsubuyakiResponse {

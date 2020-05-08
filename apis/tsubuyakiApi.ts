@@ -23,7 +23,7 @@ function mapToTsubuyaki(response: TsubuyakiResponse): Tsubuyaki {
   return {
     id: Number(response.id),
     content: response.content,
-    createdAt: response.createdAt,
+    createdAt: Date.parse(response.createdAt),
     deletedAt: response.deletedAt
   };
 }
