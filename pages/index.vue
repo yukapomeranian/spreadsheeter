@@ -4,15 +4,7 @@
       Tsubuyaki
     </h1>
     <div v-for="item in tsubuyakiItems" :key="item.id" class="pt-3">
-      <b-card>
-        <b-card-sub-title>
-          {{ item.createdAt | moment("YYYY/MM/DD ddd. hh:mm") }}
-        </b-card-sub-title>
-        <br>
-        <b-card-text>
-          {{ item.content }}
-        </b-card-text>
-      </b-card>
+      <tsubuyaki-card :tsubuyaki="item" />
     </div>
   </b-container>
 </template>
@@ -22,10 +14,10 @@ import Vue from "vue";
 import { Tsubuyaki } from "../types/models/tsubuyaki";
 // import Logo from "~/components/Logo.vue";
 import { tsubuyakiesStore } from "~/store/tsubuyaki/tsubuyaki-accessor";
-
+import TsubuyakiCard from "~/components/atomic/molecules/TsubuyakiCard.vue";
 export default Vue.extend({
   components: {
-    // Logo
+    TsubuyakiCard
   },
   fetch() {
     // fetchはサーバサイドでのみ動いてる
