@@ -1,6 +1,6 @@
 <template>
   <b-container>
-    <h1>MemoPage</h1>
+    <page-title :title="pageTitle" />
     <div v-for="item in memoItems" :key="item.id" class="pt-3">
       <b-card>
         <b-card-text>
@@ -14,7 +14,16 @@
 import Vue from "vue";
 import { Memo } from "../types/models/memo";
 import { memosStore } from "~/store/memo/memo-accessor";
+import PageTitle from "~/components/atomic/atoms/PageTitle.vue";
 export default Vue.extend({
+  components: {
+    PageTitle
+  },
+  data() {
+    return {
+      pageTitle: "メモ"
+    };
+  },
   computed: {
     memoItems(): Memo[] {
       console.log("computed()");

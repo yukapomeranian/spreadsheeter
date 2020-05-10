@@ -1,8 +1,6 @@
 <template>
   <b-container>
-    <h1>
-      Tsubuyaki
-    </h1>
+    <page-title :title="pageTitle" />
     <div v-for="item in tsubuyakiItems" :key="item.id" class="pt-3">
       <tsubuyaki-card :tsubuyaki="item" />
     </div>
@@ -12,11 +10,12 @@
 <script lang="ts">
 import Vue from "vue";
 import { Tsubuyaki } from "../types/models/tsubuyaki";
-// import Logo from "~/components/Logo.vue";
 import { tsubuyakiesStore } from "~/store/tsubuyaki/tsubuyaki-accessor";
+import PageTitle from "~/components/atomic/atoms/PageTitle.vue";
 import TsubuyakiCard from "~/components/atomic/molecules/TsubuyakiCard.vue";
 export default Vue.extend({
   components: {
+    PageTitle,
     TsubuyakiCard
   },
   fetch() {
@@ -25,6 +24,11 @@ export default Vue.extend({
   },
   asyncData() {
     console.log("asyncData()");
+  },
+  data() {
+    return {
+      pageTitle: "つぶやき"
+    };
   },
   computed: {
     tsubuyakiItems(): Tsubuyaki[] {
