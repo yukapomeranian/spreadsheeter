@@ -1,11 +1,10 @@
 <template>
   <b-card>
-    <b-card-sub-title>
-      {{ tsubuyaki.createdAt | moment("YYYY/MM/DD ddd. hh:mm") }}
+    <b-card-sub-title align="right">
+      <small class="text-muted">{{ tsubuyaki.createdAt | moment("YYYY/MM/DD ddd. hh:mm") }}</small>
     </b-card-sub-title>
-    <br>
     <b-card-text>
-      <span v-html="tsubuyaki.content" />
+      <small v-html="tsubuyaki.content" />
     </b-card-text>
   </b-card>
 </template>
