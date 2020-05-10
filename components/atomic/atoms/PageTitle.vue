@@ -15,6 +15,6 @@ export default Vue.extend({
   }
 });
 </script>
-<style>
+<style scoped>
 .wf-nicomoji { font-family: "Nico Moji"; }
 </style>
