@@ -5,7 +5,7 @@
     </b-card-sub-title>
     <br>
     <b-card-text>
-      {{ tsubuyaki.content }}
+      <span v-html="tsubuyaki.content" />
     </b-card-text>
   </b-card>
 </template>

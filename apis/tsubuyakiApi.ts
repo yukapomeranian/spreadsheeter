@@ -22,7 +22,7 @@ async function getTsubuyakies(): Promise<Tsubuyaki[]> {
 function mapToTsubuyaki(response: TsubuyakiResponse): Tsubuyaki {
   return {
     id: Number(response.id),
-    content: response.content,
+    content: response.content.replace(/\r?\n/g, "<br>"),
     createdAt: Date.parse(response.createdAt),
     deletedAt: response.deletedAt
   };

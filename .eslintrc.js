@@ -24,6 +24,8 @@ module.exports = {
         "no-console": "off",
         // allow many attributes per line
         "vue/max-attributes-per-line": "off",
+        // allow use of v-html
+        "vue/no-v-html": "off",
         // disallow a space before function parenthesis
         "space-before-function-paren": 'off',
         // disallow multiple spaces if(x  === "x") {}
