@@ -1,5 +1,5 @@
 <template>
-  <b-card>
+  <b-card class="mPlus1p">
     <b-card-sub-title align="right">
       <small class="text-muted">{{ tsubuyaki.createdAt | moment("YYYY/MM/DD ddd. hh:mm") }}</small>
     </b-card-sub-title>
@@ -21,3 +21,8 @@ export default Vue.extend({
   }
 });
 </script>
+<style scoped>
+  .mPlus1p{
+    font-family: "M+PLUS+1p";
+  }
+</style>

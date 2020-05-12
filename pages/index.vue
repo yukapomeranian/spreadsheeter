@@ -1,4 +1,4 @@
-<template>
+<template class="bg-yellow">
   <b-container>
     <page-title :title="pageTitle" />
     <div v-for="item in tsubuyakiItems" :key="item.id" class="pt-3">

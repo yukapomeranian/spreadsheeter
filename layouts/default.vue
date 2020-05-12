@@ -10,25 +10,26 @@
         target="_blank"
         rel="noopener noreferrer"
         href="https://github.com/yukapomeranian/spreadsheeter/issues"
+        class="wf-nicomoji"
       >
-        Issues Prease!
+        イシューください！
       </b-button>
     </div>
-    <b-sidebar id="sidebar-1" title="Menu" width="250px" shadow>
+    <b-sidebar id="sidebar-1" class="wf-nicomoji h1" title="" width="230px" shadow>
       <!-- ここにTwitterとかのアイコンのリンクをはりたい -->
       <nav>
-        <b-nav vertical>
+        <b-nav vertical class="h3">
           <b-nav-item active>
             <b-link to="/">
-              Tsubuyaki
+              つぶやき
             </b-link>
           </b-nav-item>
           <b-nav-item disabled>
-            Dev. Diary
+            Dev.ダイアリー
           </b-nav-item>
           <b-nav-item>
             <b-link to="/memo">
-              Memo
+              メモ
             </b-link>
           </b-nav-item>
         </b-nav>
@@ -37,3 +38,6 @@
     <nuxt />
   </div>
 </template>
+<style scoped>
+  .wf-nicomoji { font-family: "Nico Moji"; }
+</style>

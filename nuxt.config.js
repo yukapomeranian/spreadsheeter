@@ -21,7 +21,9 @@ export default {
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       // <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/earlyaccess/nicomoji.css" }
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/earlyaccess/nicomoji.css" },
+      // <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=M+PLUS+1p" }
     ]
   },
   /*
